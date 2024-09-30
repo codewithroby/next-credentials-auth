@@ -1,4 +1,5 @@
 import NextAuth from "next-auth";
+import { AuthConfig } from "./auth/auth.config";
 
 export const {
   handlers: { GET, POST },
@@ -6,5 +7,5 @@ export const {
   signOut,
   auth,
 } = NextAuth({
-  providers: [],
+  ...AuthConfig,
 });
