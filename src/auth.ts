@@ -1,5 +1,5 @@
-import NextAuth from "next-auth";
-import { AuthConfig } from "./auth/auth.config";
+import NextAuth, { type NextAuthConfig } from "next-auth";
+import { AuthConfig } from "@/auth/auth.config";
 
 export const {
   handlers: { GET, POST },
@@ -8,4 +8,4 @@ export const {
   auth,
 } = NextAuth({
   ...AuthConfig,
-});
+} satisfies NextAuthConfig);
