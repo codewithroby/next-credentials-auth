@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Next 14 Credentials Auth",
   description:
     "Next 14 Auth is a Next.js starter template with credentials authentication built using NextAuth v5, Drizzle ORM, PostgreSQL, TypeScript, Zod and Resend.",
+  openGraph: {
+    images: "/api/og",
+  },
 };
 
 export default function RootLayout({
