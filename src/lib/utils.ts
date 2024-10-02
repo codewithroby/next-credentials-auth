@@ -1,11 +1,9 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
+export const cn = (...className: ClassValue[]) => twMerge(clsx(className));
 
-export async function loadGoogleFont(font: string, weight: string) {
+export const loadGoogleFont = async (font: string, weight: string) => {
   const url = `https://fonts.googleapis.com/css2?family=${font}:wght@${weight}&display=swap`;
 
   const css = await (await fetch(url)).text();
@@ -22,4 +20,4 @@ export async function loadGoogleFont(font: string, weight: string) {
   }
 
   throw new Error("failed to load font data");
-}
+};
