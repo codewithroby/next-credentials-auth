@@ -1,4 +1,4 @@
-import { loadGoogleFont } from "@/app/utils/font";
+import { loadGoogleFont } from "@/lib/utils";
 import { ImageResponse } from "next/og";
 
 export async function GET() {
