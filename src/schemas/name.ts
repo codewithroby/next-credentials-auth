@@ -1,6 +1,10 @@
 import { z } from "zod";
 
-export const nameSchema = z.string({
-  required_error: "Name is required.",
-  invalid_type_error: "Name must be a string.",
-});
+export const nameSchema = z
+  .string({
+    required_error: "Name is required.",
+    invalid_type_error: "Name must be a string.",
+  })
+  .min(1, {
+    message: "Name is required.",
+  });
