@@ -1,1 +1,1 @@
-export * from "./auth-button";
+export * from "./register-form";
