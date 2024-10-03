@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${AppFont.className} antialiased bg-slate-50`}>
-        <header>
+        <header className="flex justify-center px-2 py-4">
           <Navbar />
         </header>
         {children}
