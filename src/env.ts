@@ -5,7 +5,7 @@ export const env = createEnv({
   server: {
     DOMAIN: z.string().url(),
     AUTH_SECRET: z.string(),
-    AUTH_TRUST_HOST: z.string().url().optional(), // This is needed to make next-auth work in applications behind a proxy
+    AUTH_TRUST_HOST: z.string().url().optional(), // This is needed to make next-auth work in applications running from behind a proxy
   },
 
   runtimeEnv: {
