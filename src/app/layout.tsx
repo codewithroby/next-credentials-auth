@@ -2,6 +2,7 @@ import { type Metadata } from "next";
 import { Inter } from "next/font/google";
 import { appConfig } from "@/lib/config";
 import "./globals.css";
+import { Navbar } from "@/components/navbar";
 
 const AppFont = Inter({
   subsets: ["latin"],
@@ -25,6 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${AppFont.className} antialiased bg-slate-50`}>
+        <header>
+          <Navbar />
+        </header>
         {children}
       </body>
     </html>
