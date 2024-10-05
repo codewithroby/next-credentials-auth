@@ -1,8 +1,7 @@
-import { type Metadata } from "next";
+import type { Viewport, Metadata } from "next";
 import { Inter } from "next/font/google";
-import { appConfig } from "@/lib/config";
+import { appConfig } from "@/lib/app-config";
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
 
 const AppFont = Inter({
   subsets: ["latin"],
@@ -18,6 +17,11 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  initialScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,9 +30,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${AppFont.className} antialiased bg-slate-50`}>
-        <header className="flex justify-center px-2 py-4">
-          <Navbar />
-        </header>
         {children}
       </body>
     </html>
