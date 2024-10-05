@@ -1,6 +1,6 @@
-## Next 14 Credentials Auth
+## Next Credentials Auth
 
-Next 14 Auth is a Next.js starter template with credentials authentication built using NextAuth v5, TypeScript, Zod, Shadcn UI, React Hook Form, PostgreSQL, Drizzle ORM and Resend.
+Next Credentials Auth is a Next.js starter template with credentials authentication built using NextAuth v5, TypeScript, Zod, Shadcn UI, React Hook Form, PostgreSQL, Drizzle ORM and Resend.
 
 **Tech Stack Used**
 
