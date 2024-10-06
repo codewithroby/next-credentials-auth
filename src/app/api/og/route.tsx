@@ -50,7 +50,7 @@ export async function GET() {
             fontWeight: "bold",
           }}
         >
-          <b tw="font-black uppercase">Next 14 Credentials Auth</b>
+          <b tw="font-black uppercase">Next Credentials Auth</b>
         </div>
       </div>
     ),
