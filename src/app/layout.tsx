@@ -1,6 +1,6 @@
 import type { Viewport, Metadata } from "next";
 import { Inter } from "next/font/google";
-import { appConfig } from "@/lib/app-config";
+import { appConfig } from "@/lib/config";
 import "./globals.css";
 
 const AppFont = Inter({
