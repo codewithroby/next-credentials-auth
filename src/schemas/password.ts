@@ -5,6 +5,9 @@ export const passwordSchema = z
     required_error: "Password is required.",
     invalid_type_error: "Password is too weak.",
   })
+  .min(1, {
+    message: "Password is required.",
+  })
   .min(8, {
     message: "Password must be at least 8 characters long.",
   })
