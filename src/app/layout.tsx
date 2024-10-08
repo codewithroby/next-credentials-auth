@@ -1,20 +1,17 @@
 import type { Viewport, Metadata } from "next";
 import { Inter } from "next/font/google";
-import { appConfig } from "@/lib/config";
+import { appConfig } from "@/config/app-config";
 import "./globals.css";
 
 const AppFont = Inter({
   subsets: ["latin"],
 });
 
-const { name, description, metaImage } = appConfig;
+const { name, description } = appConfig;
 
 export const metadata: Metadata = {
   title: name,
   description: description,
-  openGraph: {
-    images: metaImage,
-  },
 };
 
 export const viewport: Viewport = {
