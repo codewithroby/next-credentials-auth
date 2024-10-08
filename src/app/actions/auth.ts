@@ -4,9 +4,7 @@ import { z } from "zod";
 import { signIn, signOut } from "@/auth";
 import { RegisterSchemaType } from "@/types/auth/register";
 
-export const register = async (values: z.infer<RegisterSchemaType>) => {
-  return { ...values };
-};
+export const register = async (values: z.infer<RegisterSchemaType>) => {};
 
 export const login = async () => await signIn("credentials");
 
