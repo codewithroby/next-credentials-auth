@@ -1,15 +1,28 @@
-import NextAuth, { type User, NextAuthConfig } from "next-auth";
+import NextAuth, { NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { Provider } from "next-auth/providers";
+import { findAccountByCredentials } from "@/utils/account/find-by-credentials";
+import { loginSchema } from "./schemas/auth/login";
 
 const Providers: Provider[] = [
   Credentials({
-    authorize: async () => {
-      const user: User = {
-        name: "Roby",
-      };
+    authorize: async (credentials) => {
+      const validatedCredentials = loginSchema.safeParse(credentials);
 
-      return user;
+      if (!validatedCredentials.success) return null;
+
+      const account = await findAccountByCredentials(validatedCredentials.data);
+
+      if (account) {
+        return {
+          id: account.id,
+          name: account.name,
+          email: account.email,
+          role: account.role,
+        };
+      }
+
+      return null;
     },
   }),
 ];
@@ -18,6 +31,17 @@ const AuthConfig = {
   providers: Providers,
   session: {
     strategy: "jwt",
+  },
+  callbacks: {
+    jwt({ token, user }) {
+      if (user) token.role = user.role;
+      return token;
+    },
+
+    session({ session, token }) {
+      session.user.role = token.role;
+      return session;
+    },
   },
 } satisfies NextAuthConfig;
 
