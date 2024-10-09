@@ -26,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${AppFont.className} antialiased bg-slate-50`}>
+      <body
+        className={`${AppFont.className} antialiased bg-slate-50 select-none`}
+      >
         {children}
       </body>
     </html>
