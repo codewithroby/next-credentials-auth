@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { login } from "@/app/actions/auth";
 import { LoginSchemaType } from "@/types/auth/login";
 import { loginSchema } from "@/schemas/auth/login";
+import Link from "next/link";
 
 export const LoginForm = () => {
   const form = useForm<LoginSchemaType>({
@@ -78,7 +79,13 @@ export const LoginForm = () => {
           </Button>
         </form>
       </Form>
-      <span className="text-center text-sm">Don&apos;t have an account?</span>
+      <Link
+        href="/register"
+        aria-label="Don't have an account?"
+        className="text-center text-xs font-medium uppercase pt-2"
+      >
+        Don&apos;t have an account?
+      </Link>
     </>
   );
 };
