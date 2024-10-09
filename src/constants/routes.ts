@@ -4,11 +4,11 @@ export const PROTECTED_ROUTES = [
     role: 0,
   },
   {
-    path: "/manager-dashboard",
+    path: "/dashboard/manager",
     role: 1,
   },
   {
-    path: "/admin-dashboard",
+    path: "/dashboard/admin",
     role: 2,
   },
 ];
