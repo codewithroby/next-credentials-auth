@@ -6,7 +6,9 @@ const ManagerDashboardPage = async () => {
   return (
     <main>
       <section className="min-h-screen flex justify-center items-center">
-        {session?.user.role === 1 ? "Only Manager Can Access This Page" : ""}
+        {Math.max(-1, session?.user.role ?? -1) >= 1
+          ? "Only Manager Can Access This Page"
+          : ""}
       </section>
     </main>
   );
