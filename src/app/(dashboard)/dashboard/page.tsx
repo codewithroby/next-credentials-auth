@@ -6,7 +6,9 @@ const DashboardPage = async () => {
   return (
     <main>
       <section className="min-h-screen flex justify-center items-center">
-        {session?.user.role === 1 ? "Hello, User!" : ""}
+        {session?.user.role === 0
+          ? "Only Authenticated Can Access This Page"
+          : ""}
       </section>
     </main>
   );

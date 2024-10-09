@@ -6,7 +6,7 @@ const AdminDashboardPage = async () => {
   return (
     <main>
       <section className="min-h-screen flex justify-center items-center">
-        {session?.user.role === 2 ? "Hello, Admin!" : ""}
+        {session?.user.role === 2 ? "Only Admin Can Access This Page" : ""}
       </section>
     </main>
   );
