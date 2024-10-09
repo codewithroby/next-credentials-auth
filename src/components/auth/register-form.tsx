@@ -2,7 +2,6 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { registerSchema } from "@/schemas/auth/register";
 import { type RegisterSchemaType } from "@/types/auth/register";
 import {
@@ -19,7 +18,7 @@ import { Button } from "@/components/ui/button";
 import { register } from "@/app/actions/auth";
 
 export const RegisterForm = () => {
-  const form = useForm<z.infer<RegisterSchemaType>>({
+  const form = useForm<RegisterSchemaType>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
       name: "",
@@ -31,7 +30,7 @@ export const RegisterForm = () => {
     shouldFocusError: false,
   });
 
-  const onSubmit = async (values: z.infer<RegisterSchemaType>) => {
+  const onSubmit = async (values: RegisterSchemaType) => {
     await register(values);
   };
 
