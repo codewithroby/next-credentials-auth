@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm";
 import { db } from "@/database/client";
 import { accounts } from "@/database/schemas/accounts";
-import { validateEmail } from "@/utils/validate-email";
+import { validateEmail } from "@/utils/auth/validate-email";
 
 export const findAccountByEmail = async (email: string) => {
   if (!validateEmail(email)) return false;
