@@ -1,12 +1,11 @@
-import { z } from "zod";
 import { eq } from "drizzle-orm";
 import { db } from "@/database/client";
 import { accounts } from "@/database/schemas/accounts";
-import { emailSchema } from "@/schemas/email";
+import { validateEmail } from "@/utils/validate-email";
 
-export const findAccountByEmail = async (
-  email: z.infer<typeof emailSchema>
-) => {
+export const findAccountByEmail = async (email: string) => {
+  if (!validateEmail(email)) return false;
+
   const account = await db
     .select({
       email: accounts.email,
