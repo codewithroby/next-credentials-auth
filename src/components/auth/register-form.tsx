@@ -17,6 +17,7 @@ import { ImSpinner9 } from "react-icons/im";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { register } from "@/app/actions/auth";
+import Link from "next/link";
 
 export const RegisterForm = () => {
   const form = useForm<RegisterSchemaType>({
@@ -92,7 +93,13 @@ export const RegisterForm = () => {
           </Button>
         </form>
       </Form>
-      <span className="text-center text-sm">Already have an account?</span>
+      <Link
+        href="/login"
+        aria-label="Already have an account?"
+        className="text-center text-xs font-medium uppercase pt-2"
+      >
+        Already have an account?
+      </Link>
     </>
   );
 };
