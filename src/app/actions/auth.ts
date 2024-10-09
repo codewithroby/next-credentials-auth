@@ -13,7 +13,7 @@ export const login = async (values: LoginSchemaType) =>
   await signIn("credentials", {
     email: values.email,
     password: values.password,
-    redirectTo: "/",
+    redirectTo: "/dashboard",
   });
 
 export const logout = async () => await signOut();
