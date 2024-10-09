@@ -1,6 +1,4 @@
-export const publicRoutes = ["/", "/login", "/register"];
-
-export const protectedRoutes = [
+export const PROTECTED_ROUTES = [
   {
     path: "/dashboard",
     role: 0,
