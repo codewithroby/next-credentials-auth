@@ -4,6 +4,7 @@ import { accounts } from "@/database/schemas/account";
 declare module "next-auth" {
   interface User {
     role: typeof accounts.$inferSelect.role;
+    id: typeof accounts.$inferSelect.id;
   }
 
   interface Session {
@@ -14,5 +15,6 @@ declare module "next-auth" {
 declare module "next-auth/jwt" {
   interface JWT extends DefaultJWT {
     role: typeof accounts.$inferSelect.role;
+    id: typeof accounts.$inferSelect.id;
   }
 }
