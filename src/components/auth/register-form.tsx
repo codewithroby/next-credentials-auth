@@ -12,6 +12,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { ImSpinner9 } from "react-icons/im";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -31,7 +32,8 @@ export const RegisterForm = () => {
   });
 
   const onSubmit = async (values: RegisterSchemaType) => {
-    await register(values);
+    const result = await register(values);
+    console.log(result);
   };
 
   return (
@@ -77,8 +79,16 @@ export const RegisterForm = () => {
               </FormItem>
             )}
           />
-          <Button type="submit" className="w-full uppercase">
-            Create Account
+          <Button
+            type="submit"
+            className="w-full uppercase relative"
+            disabled={form.formState.isSubmitting}
+          >
+            {form.formState.isSubmitting ? (
+              <ImSpinner9 className="size-5 animate-spin" />
+            ) : (
+              <span>Create Account</span>
+            )}
           </Button>
         </form>
       </Form>

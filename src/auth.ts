@@ -33,12 +33,12 @@ const AuthConfig = {
     strategy: "jwt",
   },
   callbacks: {
-    jwt({ token, user }) {
+    async jwt({ token, user }) {
       if (user) token.role = user.role;
       return token;
     },
 
-    session({ session, token }) {
+    async session({ session, token }) {
       session.user.role = token.role;
       return session;
     },
