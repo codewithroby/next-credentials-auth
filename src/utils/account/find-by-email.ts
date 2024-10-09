@@ -7,7 +7,9 @@ export const findAccountByEmail = async (email: string) => {
   if (!validateEmail(email)) return false;
 
   const account = await db
-    .select()
+    .select({
+      email: accounts.email,
+    })
     .from(accounts)
     .where(eq(accounts.email, email))
     .limit(1)
