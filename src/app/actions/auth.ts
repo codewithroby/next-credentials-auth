@@ -1,11 +1,19 @@
 "use server";
 
-import { z } from "zod";
 import { signIn, signOut } from "@/auth";
+import { LoginSchemaType } from "@/types/auth/login";
 import { RegisterSchemaType } from "@/types/auth/register";
+import { createAccount } from "@/utils/account/create";
 
-export const register = async (values: z.infer<RegisterSchemaType>) => {};
+export const register = async (values: RegisterSchemaType) => {
+  await createAccount(values);
+};
 
-export const login = async () => await signIn("credentials");
+export const login = async (values: LoginSchemaType) =>
+  await signIn("credentials", {
+    email: values.email,
+    password: values.password,
+    redirectTo: "/",
+  });
 
 export const logout = async () => await signOut();
