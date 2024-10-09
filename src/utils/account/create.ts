@@ -10,7 +10,7 @@ export const createAccount = async (values: RegisterSchemaType) => {
   const { name, email, password } = validateNewAccount(values);
 
   if (await findAccountByEmail(email))
-    return { error: "Account already exist!" };
+    return { error: "Account already exist." };
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -23,7 +23,7 @@ export const createAccount = async (values: RegisterSchemaType) => {
     })
     .returning();
 
-  if (account[0].email) {
-    await login({ email, password });
-  }
+  if (!account[0].email) return { error: "Account not created." };
+
+  await login({ email, password });
 };
