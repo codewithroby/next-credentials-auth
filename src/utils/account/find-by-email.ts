@@ -4,7 +4,7 @@ import { accounts } from "@/database/schemas/account";
 import { validateEmail } from "@/utils/validators/validate-email";
 
 export const findAccountByEmail = async (email: string) => {
-  if (!validateEmail(email)) return [];
+  if (!validateEmail(email)) return false;
 
   const account = await db
     .select()
