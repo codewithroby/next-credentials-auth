@@ -2,7 +2,8 @@ import NextAuth, { NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { Provider } from "next-auth/providers";
 import { findAccountByCredentials } from "@/utils/account/find-by-credentials";
-import { loginSchema } from "./schemas/auth/login";
+import { loginSchema } from "@/schemas/auth/login";
+import { getUserById } from "@/data/user";
 
 const Providers: Provider[] = [
   Credentials({
@@ -46,6 +47,14 @@ const AuthConfig = {
 
     async jwt({ token }) {
       if (!token.sub) return token;
+
+      const existingUser = await getUserById(token.sub);
+
+      if (!existingUser) return token;
+
+      token.role = existingUser.role;
+
+      return token;
     },
   },
 } satisfies NextAuthConfig;
