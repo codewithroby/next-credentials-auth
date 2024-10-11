@@ -1,6 +1,6 @@
-const USER = 0;
-const MODERATOR = 1;
-const ADMIN = 2;
+const USER = "USER";
+const MODERATOR = "MODERATOR";
+const ADMIN = "ADMIN";
 
 export const USER_ROLES = {
   USER,
