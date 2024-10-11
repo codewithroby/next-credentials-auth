@@ -1,5 +1,5 @@
 {
-  "id": "912a7517-fe0d-48ac-a28e-ab268850766d",
+  "id": "087f8cc5-56c0-4c2e-8317-e1368fbc2cad",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -35,10 +35,10 @@
         },
         "role": {
           "name": "role",
-          "type": "smallint",
+          "type": "varchar",
           "primaryKey": false,
           "notNull": false,
-          "default": 0
+          "default": "'USER'"
         }
       },
       "indexes": {},

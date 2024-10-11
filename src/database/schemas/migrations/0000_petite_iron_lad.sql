@@ -3,5 +3,5 @@ CREATE TABLE IF NOT EXISTS "accounts" (
 	"name" varchar(255),
 	"email" varchar(255),
 	"password" varchar(255),
-	"role" smallint DEFAULT 0
+	"role" varchar DEFAULT 'USER'
 );
