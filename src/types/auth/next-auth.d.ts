@@ -1,19 +1,19 @@
 import { JWT as DefaultJWT } from "next-auth/jwt";
-import { accounts } from "@/database/schemas/account";
 import { DefaultSession } from "next-auth";
+import { UserRoleType } from "@/types/auth/roles";
+
+export type ExtendedUser = {
+  role: UserRoleType & DefaultSession["user"];
+};
 
 declare module "next-auth" {
-  interface User {
-    role: typeof accounts.$inferSelect.role;
-  }
-
   interface Session {
-    user: User & DefaultSession["user"];
+    user: ExtendedUser;
   }
 }
 
 declare module "next-auth/jwt" {
   interface JWT extends DefaultJWT {
-    role: typeof accounts.$inferSelect.role;
+    role: UserRoleType;
   }
 }
