@@ -1,9 +1,9 @@
-const GUEST = 0;
-const ADMIN = 1;
-const SUPER_ADMIN = 2;
+const USER = 0;
+const MODERATOR = 1;
+const ADMIN = 2;
 
 export const USER_ROLES = {
-  GUEST,
+  USER,
+  MODERATOR,
   ADMIN,
-  SUPER_ADMIN,
 } as const;
