@@ -33,15 +33,19 @@ const AuthConfig = {
     strategy: "jwt",
   },
   callbacks: {
-    async jwt({ token, user }) {
-      if (user) token.role = user.role;
-      return token;
+    async session({ token, session }) {
+      if (token.sub && session.user) {
+        session.user.id = token.sub;
+      }
+
+      if (token.role && session.user) {
+        session.user.role = token.role;
+      }
+      return session;
     },
 
-    async session({ session, token }) {
-      session.user.role = token.role;
-      session.user.id = token.sub || "";
-      return session;
+    async jwt({ token }) {
+      if (!token.sub) return token;
     },
   },
 } satisfies NextAuthConfig;
