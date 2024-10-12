@@ -27,7 +27,11 @@ const ProfileData = ({ user }: { user: ExtendedUser }) => (
       content={user.role ?? ""}
     />
     <span className="w-full h-px bg-gray-100"></span>
-    <SetRoleButtons />
+
+    <div className="flex flex-col space-y-2">
+      <span className="font-bold uppercase text-center">Set User Role</span>
+      <SetRoleButtons />
+    </div>
     <span className="w-full h-px bg-gray-100"></span>
     <form action={logout}>
       <Button type="submit" className="uppercase w-full">
