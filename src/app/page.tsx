@@ -1,6 +1,6 @@
-import { LoginLinkButton } from "@/components/login-link-button";
+import { ProfileData } from "@/components/profile-data";
+import { UnauthorizedAlert } from "@/components/unauthorized-alert";
 import { DashboardCard } from "@/components/dashboard-card";
-import { HomeButtonGrid } from "@/components/home-button-grid";
 import { useCurrentUser } from "@/hooks/use-current-user";
 
 const HomePage = async () => {
@@ -8,9 +8,9 @@ const HomePage = async () => {
 
   return (
     <main>
-      <section className="min-h-screen flex justify-center items-center">
-        <DashboardCard title="Homepage">
-          {user?.id ? <HomeButtonGrid /> : <LoginLinkButton />}
+      <section className="min-h-screen flex justify-center items-center py-[110px] sm:py-[70px]">
+        <DashboardCard title="Profile">
+          {user?.id ? <ProfileData user={user} /> : <UnauthorizedAlert />}
         </DashboardCard>
       </section>
     </main>

@@ -10,7 +10,7 @@ const RegularUserPage = async () => {
 
   return (
     <main>
-      <section className="min-h-screen flex justify-center items-center">
+      <section className="min-h-screen flex justify-center items-center py-[110px] sm:py-[70px]">
         <DashboardCard title="Protected Moderator Page">
           {isRoleAuthorized(role, USER_ROLES.MODERATOR) ? (
             <AuthorizedAlert />
