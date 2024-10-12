@@ -8,7 +8,7 @@ const HomePage = async () => {
 
   return (
     <main>
-      <section className="min-h-screen flex justify-center items-center py-[110px] sm:py-[70px]">
+      <section className="min-h-screen flex justify-center items-center py-[150px] sm:py-[70px]">
         {user?.id ? (
           <DashboardCard title="Profile">
             <ProfileData user={user} />
