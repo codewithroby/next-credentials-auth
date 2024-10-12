@@ -1,8 +1,8 @@
 import { ExtendedUser } from "@/types/auth/next-auth";
-import { ProfileInfoPill } from "./profile-info-pill";
+import { ProfileInfoPill, RoleInfoPill } from "@/components/profile-info-pill";
 import { logout } from "@/app/actions/auth";
 import { Button } from "@/components/ui/button";
-import { SetRoleButtons } from "./set-role-buttons";
+import { SetRoleButtons } from "@/components/set-role-buttons";
 
 const ProfileData = ({ user }: { user: ExtendedUser }) => (
   <div className="flex flex-col space-y-3">
@@ -21,7 +21,7 @@ const ProfileData = ({ user }: { user: ExtendedUser }) => (
       title="Email"
       content={user.email ?? ""}
     />
-    <ProfileInfoPill
+    <RoleInfoPill
       key="pip-accountRole"
       title="Role"
       content={user.role ?? ""}
