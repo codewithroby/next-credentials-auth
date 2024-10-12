@@ -1,5 +1,5 @@
 {
-  "id": "087f8cc5-56c0-4c2e-8317-e1368fbc2cad",
+  "id": "c314c285-e982-484c-9a18-e3731eb33ec4",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -19,26 +19,26 @@
           "name": "name",
           "type": "varchar(255)",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "email": {
           "name": "email",
           "type": "varchar(255)",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "password": {
           "name": "password",
           "type": "varchar(255)",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "role": {
           "name": "role",
           "type": "varchar",
           "primaryKey": false,
-          "notNull": false,
-          "default": "'USER'"
+          "notNull": true,
+          "default": "'REGULAR USER'"
         }
       },
       "indexes": {},
