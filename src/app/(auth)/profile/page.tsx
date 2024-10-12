@@ -1,5 +1,5 @@
-import { ProfileData } from "@/components/auth/profile-data";
-import { UnauthorizedAlert } from "@/components/auth/unauthorized-alert";
+import { ProfileData } from "@/components/profile-data";
+import { UnauthorizedAlert } from "@/components/unauthorized-alert";
 import { DashboardCard } from "@/components/dashboard-card";
 import { useCurrentUser } from "@/hooks/use-current-user";
 

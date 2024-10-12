@@ -1,5 +1,5 @@
-import { AuthorizedAlert } from "@/components/auth/authorized-alert";
-import { UnauthorizedAlert } from "@/components/auth/unauthorized-alert";
+import { AuthorizedAlert } from "@/components/authorized-alert";
+import { UnauthorizedAlert } from "@/components/unauthorized-alert";
 import { DashboardCard } from "@/components/dashboard-card";
 import { USER_ROLES } from "@/constants/roles";
 import { useCurrentRole } from "@/hooks/use-current-role";

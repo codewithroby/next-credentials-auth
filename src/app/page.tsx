@@ -1,4 +1,4 @@
-import { LoginLinkButton } from "@/components/auth/login-link-button";
+import { LoginLinkButton } from "@/components/login-link-button";
 import { DashboardCard } from "@/components/dashboard-card";
 import { HomeButtonGrid } from "@/components/home-button-grid";
 import { useCurrentUser } from "@/hooks/use-current-user";
