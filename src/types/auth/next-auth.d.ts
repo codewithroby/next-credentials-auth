@@ -3,8 +3,8 @@ import { DefaultSession } from "next-auth";
 import { UserRoleType } from "@/types/auth/roles";
 
 export type ExtendedUser = {
-  role: UserRoleType & DefaultSession["user"];
-};
+  role: UserRoleType;
+} & DefaultSession["user"];
 
 declare module "next-auth" {
   interface Session {
