@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${AppFont.className} antialiased bg-slate-50 select-none pt-[112px] sm:pt-[68px]`}
+        className={`${AppFont.className} antialiased bg-slate-50 select-none`}
       >
         <Header />
         {children}
