@@ -1,7 +1,7 @@
 import { ProfileData } from "@/components/profile-data";
-import { UnauthorizedAlert } from "@/components/unauthorized-alert";
 import { DashboardCard } from "@/components/dashboard-card";
 import { useCurrentUser } from "@/hooks/use-current-user";
+import { LoginLinkButton } from "@/components/login-link-button";
 
 const HomePage = async () => {
   const user = await useCurrentUser();
@@ -9,9 +9,15 @@ const HomePage = async () => {
   return (
     <main>
       <section className="min-h-screen flex justify-center items-center py-[110px] sm:py-[70px]">
-        <DashboardCard title="Profile">
-          {user?.id ? <ProfileData user={user} /> : <UnauthorizedAlert />}
-        </DashboardCard>
+        {user?.id ? (
+          <DashboardCard title="Profile">
+            <ProfileData user={user} />
+          </DashboardCard>
+        ) : (
+          <DashboardCard title="Not Logged In">
+            <LoginLinkButton />
+          </DashboardCard>
+        )}
       </section>
     </main>
   );
