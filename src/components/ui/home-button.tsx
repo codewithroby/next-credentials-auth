@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export const HomeButton = () => (
-  <Link href="/" aria-label="homepage" className="fixed bottom-10 right-10">
+  <Link href="/" aria-label="homepage" className="fixed bottom-6 right-6">
     <Button className="rounded-full size-14 p-3.5">
       <svg
         className="size-full"
