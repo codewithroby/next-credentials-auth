@@ -1,25 +1,44 @@
-import { UserRoleType } from "@/types/auth/roles";
 import { eq } from "drizzle-orm";
 import { db } from "@/database/client";
 import { accounts } from "@/database/schemas/account";
 import { auth } from "@/auth";
+import { USER_ROLES } from "@/constants/roles";
 
-export const setUserRole = async (role: UserRoleType) => {
+export const setRegularRole = async () => {
   const user = await auth();
 
-  if (!user?.user.id) return false;
+  if (user?.user.id) {
+    await db
+      .update(accounts)
+      .set({
+        role: USER_ROLES.USER,
+      })
+      .where(eq(accounts.id, user.user.id));
+  }
+};
 
-  const updatedUser = await db
-    .update(accounts)
-    .set({
-      role: role,
-    })
-    .where(eq(accounts.id, user.user.id))
-    .returning({
-      role: accounts.role,
-    });
+export const setModeratorRole = async () => {
+  const user = await auth();
 
-  if (updatedUser[0].role) return true;
+  if (user?.user.id) {
+    await db
+      .update(accounts)
+      .set({
+        role: USER_ROLES.MODERATOR,
+      })
+      .where(eq(accounts.id, user.user.id));
+  }
+};
 
-  return false;
+export const setAdminRole = async () => {
+  const user = await auth();
+
+  if (user?.user.id) {
+    await db
+      .update(accounts)
+      .set({
+        role: USER_ROLES.ADMIN,
+      })
+      .where(eq(accounts.id, user.user.id));
+  }
 };
