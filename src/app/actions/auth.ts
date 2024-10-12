@@ -16,4 +16,7 @@ export const login = async (values: LoginSchemaType) =>
     redirectTo: "/",
   });
 
-export const logout = async () => await signOut();
+export const logout = async () =>
+  await signOut({
+    redirectTo: "/",
+  });
