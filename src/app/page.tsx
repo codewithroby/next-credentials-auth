@@ -1,11 +1,16 @@
+import { LoginLinkButton } from "@/components/auth/login-link-button";
 import { DashboardCard } from "@/components/dashboard-card";
+import { HomeButtonGrid } from "@/components/home-button-grid";
+import { useCurrentUser } from "@/hooks/use-current-user";
 
-const HomePage = () => {
+const HomePage = async () => {
+  const user = await useCurrentUser();
+
   return (
     <main>
       <section className="min-h-screen flex justify-center items-center">
         <DashboardCard title="Homepage">
-          <span>hey</span>
+          {user?.id ? <HomeButtonGrid /> : <LoginLinkButton />}
         </DashboardCard>
       </section>
     </main>
