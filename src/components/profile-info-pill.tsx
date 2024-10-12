@@ -30,9 +30,9 @@ export const RoleInfoPill = ({
       className={cn(
         "uppercase text-xs text-nowrap overflow-hidden text-ellipsis max-w-[200px] text-right text-white rounded-sm py-1 px-2 font-medium",
         {
-          "bg-green-600": (content = USER_ROLES.USER),
-          "bg-sky-600": (content = USER_ROLES.MODERATOR),
-          "bg-indigo-600": (content = USER_ROLES.ADMIN),
+          "bg-green-600": content === USER_ROLES.USER,
+          "bg-sky-600": content === USER_ROLES.MODERATOR,
+          "bg-indigo-600": content === USER_ROLES.ADMIN,
         }
       )}
     >
