@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useCurrentUser } from "@/hooks/use-current-user";
-import { ProfileData } from "./profile-data";
+import { ProfileData } from "@/components/profile-data";
 
 const ProfileCard = async () => {
   const user = await useCurrentUser();
