@@ -1,4 +1,4 @@
-const USER = "USER";
+const USER = "REGULAR USER";
 const MODERATOR = "MODERATOR";
 const ADMIN = "ADMIN";
 
