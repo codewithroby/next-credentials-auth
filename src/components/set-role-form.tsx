@@ -26,7 +26,7 @@ export const SetRoleForm = ({
   return (
     <>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1">
           <Button
             type="submit"
             className="w-full uppercase relative"
