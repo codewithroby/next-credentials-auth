@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { ProfileData } from "@/components/profile-data";
 
-const ProfileCard = async () => {
+export const ProfileCard = async () => {
   const user = await useCurrentUser();
 
   return (
@@ -30,5 +30,3 @@ const ProfileCard = async () => {
     </div>
   );
 };
-
-export { ProfileCard };
