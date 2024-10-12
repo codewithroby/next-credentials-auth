@@ -11,7 +11,7 @@ const RegularUserPage = async () => {
   return (
     <main>
       <section className="min-h-screen flex justify-center items-center">
-        <DashboardCard title="Regular User Section">
+        <DashboardCard title="Regular Use Page">
           {isRoleAuthorized(role, USER_ROLES.USER) ? (
             <AuthorizedAlert />
           ) : (
