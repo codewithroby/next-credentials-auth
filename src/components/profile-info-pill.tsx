@@ -9,9 +9,9 @@ export const ProfileInfoPill = ({
   title: string;
   content: string;
 }) => (
-  <div className="flex rounded-md shadow-sm border border-gray-100 bg-white py-4 px-3 space-x-3 items-center">
+  <div className="flex rounded-md shadow-sm border border-gray-100 bg-white py-4 px-3 sm:space-x-3 space-y-3 sm:space-y-0 sm:items-center flex-col sm:flex-row">
     <span className="flex-1 uppercase font-semibold text-sm">{title}</span>
-    <span className="uppercase text-xs text-nowrap overflow-hidden text-ellipsis max-w-[200px] text-right bg-primary text-white rounded-sm py-1 px-2 font-medium">
+    <span className="uppercase text-xs text-nowrap overflow-hidden text-ellipsis sm:max-w-[250px] text-center sm:text-right bg-primary text-white rounded-sm py-1 px-2 font-medium">
       {content}
     </span>
   </div>
