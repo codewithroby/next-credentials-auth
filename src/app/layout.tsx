@@ -2,6 +2,7 @@ import type { Viewport, Metadata } from "next";
 import { Inter } from "next/font/google";
 import { appConfig } from "@/config/app-config";
 import "./globals.css";
+import { HomeButton } from "@/components/ui/home-button";
 
 const AppFont = Inter({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${AppFont.className} antialiased bg-slate-50 select-none`}
       >
         {children}
+        <HomeButton />
       </body>
     </html>
   );
